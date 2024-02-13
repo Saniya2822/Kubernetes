@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node1api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node1api
+  template:
+    metadata:
+      labels:
+        app: node1api
+    spec:
+      containers:
+        - name: node1api 
+          image: sanu28221/k8s_assi02:node1api_image
+          ports:
+            - containerPort: 80

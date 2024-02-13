@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node3api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node3api
+  template:
+    metadata:
+      labels:
+        app: node3api
+    spec:
+      containers:
+        - name: node3api
+          image: sanu28221/k8s_assi02:node3api_image
+          ports:
+            - containerPort: 80
